@@ -102,7 +102,8 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 				'###JQUERY_OTHERS###'
 			);
 			foreach($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'] as $userFunc) {
-				$otherJSpath = t3lib_div::callUserFunction($userFunc);
+				$params = array();
+				$otherJSpath = t3lib_div::callUserFunction($userFunc, $params, $this);
 				if(is_file($otherJSpath)) {
 					$subpartArray['###JQUERY_OTHERS###'] .= $this->cObj->substituteMarkerArray(
 						$subpartOthers, array(

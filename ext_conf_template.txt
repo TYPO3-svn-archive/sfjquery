@@ -6,3 +6,5 @@ activateCompatibilityMode = 0
 alternateJQueryFile =
 # cat=basic; type=string; label=change jquery-ui-js-file:With this setting you can choose another jQuery-ui-js-file. Leave empty to use default once. Values: fileadmin/jquery/jquery-ui-1.7.2.custom.min.js, others.
 alternateJQueryUIFile =
+# cat=plugins; type=boolean; label=add JS to upload files (ajaxupload.js):With this script you can define a button which opens a filebrowser and uploads your selected file directly to the server...if you want so...
+addPluginAjaxupload = 0
