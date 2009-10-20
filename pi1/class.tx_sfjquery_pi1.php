@@ -85,7 +85,7 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 		// include jQuery-Scripts onto page
 		$this->template['jquery'] = $this->cObj->getSubpart(
 			$this->template['total'], '###JQUERY###');
-			
+
 		$markerArray['###JQUERY_PATH###'] = $this->jqueryPath;
 
 		if($this->extConf['enableMoreJQuery'] == 1) {
@@ -93,7 +93,30 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 		} else {
 			$subpartArray['###JQUERY_UI###'] = '';
 		}
-		
+
+		//Hook
+		//include other/additional JavaScript files
+		if(isset($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'])) {
+			$subpartOthers = $this->cObj->getSubpart(
+				$this->template['jquery'],
+				'###JQUERY_OTHERS###'
+			);
+			foreach($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'] as $userFunc) {
+				$otherJSpath = t3lib_div::callUserFunction($userFunc);
+				if(is_file($otherJSpath)) {
+					$subpartArray['###JQUERY_OTHERS###'] .= $this->cObj->substituteMarkerArray(
+						$subpartOthers, array(
+							'###JQUERY_OTHERS_PATH###' =>	htmlspecialchars($otherJSpath)
+						)
+					);
+				} else {
+					$subpartArray['###JQUERY_OTHERS###'] .= '';
+				}
+			}
+		} else {
+			$subpartArray['###JQUERY_OTHERS###'] = '';
+		}
+
 		//Ensure that header part is added only once to the page
 		$key = $this->prefixId.'_'.md5($this->template['jquery']);
 		if(!isset($GLOBALS['TSFE']->additionalHeaderData[$key])) {
@@ -109,19 +132,18 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 		$GLOBALS['TSFE']->register['sfOutScript'] .= $this->conf['outscript']."\n";
 
 		//Templating CSS-File
-		$this->template['cssFile'] = $this->cObj->getSubpart(
-			$this->template['total'], '###CSS_FILE###');
-			
 		if(trim($this->conf['cssFile']) != '') {
-			$markerArray['###CSS_PATH###'] = trim($this->conf['cssFile']);
+			$this->template['cssFile'] = $this->cObj->getSubpart(
+				$this->template['total'], '###CSS_FILE###');
+			$GLOBALS['TSFE']->additionalHeaderData['cssFile'] =
+				$this->cObj->substituteMarker(
+					$this->template['cssFile'],
+					'###CSS_PATH###',
+					trim($this->conf['cssFile'])
+			);
 		} else {
-			$subpartArray['###CSS_FILE###'] = '';
+			$GLOBALS['TSFE']->additionalHeaderData['cssFile'] = '';
 		}
-		
-		$GLOBALS['TSFE']->additionalHeaderData['cssFile'] .=
-			$this->cObj->substituteMarkerArrayCached(
-				$this->template['cssFile'], $markerArray, $subpartArray
-		);
 
 		//Templating Headerparts
 		$this->template['header'] = $this->cObj->getSubpart(
