@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'sfjquery'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tt_content.list_type_pi1">SF jQuery</label>
+			<label index="flexform.page.script">jQuery-Script</label>
+			<label index="flexform.page.html">HTML</label>
+			<label index="flexform.page.images">Images</label>
+			<label index="flexform.page.css">CSS</label>
+			<label index="flexform.page.ts">TypoScript</label>
+			<label index="flexform.domscript">Insert script which has to be inserted into domready</label>
+			<label index="flexform.domFile">Add a JS-File which will be added to the above field</label>
+			<label index="flexform.outscript">Maybe you have some function, which has to be outside domready</label>
+			<label index="flexform.outFile">Add a JS-File which will be added to the above field</label>
+			<label index="flexform.content">Insert HTML-Code</label>
+			<label index="flexform.htmlFile">Add a HTML-File which will be added to the above field</label>
+			<label index="flexform.directory">Image-Directory</label>
+			<label index="flexform.images">Images: Insert them with ###IMG### in HTML-Area</label>
+			<label index="flexform.height">Global image height</label>
+			<label index="flexform.width">Global image width</label>
+			<label index="flexform.links">Maybe you want some links for you images</label>
+			<label index="flexform.ts">Here you can insert your own TypoScript</label>
+			<label index="flexform.tsFile">Add a TS-File which will be added to the above field</label>
+			<label index="flexform.cssFile">In jQuery you can define a path to CSS-Framework</label>
+			<label index="flexform.style">Define your own StyleSheets</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="tt_content.list_type_pi1">SF jQuery</label>
+			<label index="flexform.page.script">jQuery-Script</label>
+			<label index="flexform.page.html">HTML</label>
+			<label index="flexform.page.images">Bilder</label>
+			<label index="flexform.page.css">CSS</label>
+			<label index="flexform.page.ts">TypoScript</label>
+			<label index="flexform.domscript">Füge hier dein Script ein das sich innerhalb von domready befinden soll</label>
+			<label index="flexform.domFile">Füge eine JS-Datei ein, deren Inhalt dem Feld hier drüber hinzugefügt wird</label>
+			<label index="flexform.outscript">Füge hier deinen Code ein, der außerhalb von domready definiert werden soll</label>
+			<label index="flexform.outFile">Füge eine JS-Datei ein, deren Inhalt dem Feld hier drüber hinzugefügt wird</label>
+			<label index="flexform.content">Einzufügender HTML-Code</label>
+			<label index="flexform.htmlFile">Füge eine HTML-Datei ein, deren Inhalt dem Feld hier drüber hinzugefügt wird</label>
+			<label index="flexform.directory">Bilder-Verzeichnis</label>
+			<label index="flexform.images">Bilder: Füge diese mit ###IMG###in die HTML-Box ein.</label>
+			<label index="flexform.height">Globale Bilderhöhe</label>
+			<label index="flexform.width">Globale Bilderbreite</label>
+			<label index="flexform.links">Füge hier Links für die jeweiligen Bilder ein.</label>
+			<label index="flexform.ts">Hier können Sie Ihr eigenes TypoScript einfügen</label>
+			<label index="flexform.tsFile">Füge eine TS-Datei ein, deren Inhalt dem Feld hier drüber hinzugefügt wird</label>
+			<label index="flexform.cssFile">In jQuery kannst du einen Pfad zum jQuery CSS-Framework erstellen</label>
+			<label index="flexform.style">Erstelle hier dein eigenes StyleSheet</label>
+		</languageKey>
+	</data>
+</T3locallang>
