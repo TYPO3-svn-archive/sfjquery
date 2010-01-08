@@ -12,6 +12,26 @@
 				</TCEforms>
 				<type>array</type>
 				<el>
+					<scriptname>
+						<TCEforms>
+							<label>LLL:EXT:sfjquery/locallang_db.xml:flexform.scriptname</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0" type="array">
+										<numIndex index="0"></numIndex>
+										<numIndex index="1"></numIndex>
+									</numIndex>
+								</items>
+								<foreign_table>tx_sfjquery_scripts</foreign_table>
+								<foreign_table_where>ORDER BY tx_sfjquery_scripts.name</foreign_table_where>
+								<size>1</size>
+								<minitems>0</minitems>
+								<maxitems>1</maxitems>
+							</config>
+							<defaultExtras>enable-tab:nowrap</defaultExtras>
+						</TCEforms>
+					</scriptname>
 					<domscript>
 						<TCEforms>
 							<label>LLL:EXT:sfjquery/locallang_db.xml:flexform.domscript</label>

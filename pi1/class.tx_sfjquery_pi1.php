@@ -242,12 +242,38 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 		//Initialize Flexform
 		$this->pi_initPIflexForm();
 		
+		//Get additional data from database
+		//This data will be plased bevor all other content
+		$this->conf['scriptname'] .= $this->fetchConfigurationValue('scriptname');
+
+		//If there was a selection made, than search for this selection
+		if($this->conf['scriptname'] != '') {
+			$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+				'*',
+				'tx_sfjquery_scripts',
+				'uid='.$this->conf['scriptname'],
+				'', '', ''
+			);
+			$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
+	
+			$this->domscript = $row['domscript'].CHR(10);
+			if(is_file($row['domfile'])) $this->domscript .= file_get_contents($row['domfile'])."\n";
+			$this->outscript = $row['outscript'].CHR(10);
+			if(is_file($row['outfile'])) $this->outscript .= file_get_contents($row['outfile'])."\n";
+			$this->content = $row['content'].CHR(10);
+			if(is_file($row['htmlfile'])) $this->content .= file_get_contents($row['htmlfile'])."\n";
+			$this->ts = $row['ts'].CHR(10);
+			if(is_file($row['tsfile'])) $this->ts .= file_get_contents($row['tsfile'])."\n";
+			$this->style = $row['css'].CHR(10);
+			if(is_file($row['cssuifile'])) $this->conf['cssFile'] = $row['cssuifile'];
+		}
+		
 		// Get Flexform values
-		$this->conf['domscript'] = $this->fetchConfigurationValue('domscript');
+		$this->conf['domscript'] = $this->domscript.$this->fetchConfigurationValue('domscript');
 		$this->conf['domFile'] = $this->fetchConfigurationValue('domFile');
-		$this->conf['outscript'] = $this->fetchConfigurationValue('outscript');
+		$this->conf['outscript'] = $this->outscript.$this->fetchConfigurationValue('outscript');
 		$this->conf['outFile'] = $this->fetchConfigurationValue('outFile');
-		$this->conf['content'] = $this->fetchConfigurationValue(
+		$this->conf['content'] = $this->content.$this->fetchConfigurationValue(
 			'content', 'html'
 		);
 		$this->conf['htmlFile'] = $this->fetchConfigurationValue(
@@ -283,7 +309,7 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 			$this->conf['links.']
 		);
 		//Get TypoScript
-		$this->conf['ts'] = $this->fetchConfigurationValue(
+		$this->conf['ts'] .= $this->fetchConfigurationValue(
 				'ts', 'ts'
 		);
 		$this->conf['tsFile'] = $this->fetchConfigurationValue(
@@ -294,7 +320,7 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 		$this->conf['cssFile'] = $this->fetchConfigurationValue(
 			'cssFile', 'css'
 		);
-		$this->conf['style'] = $this->fetchConfigurationValue(
+		$this->conf['style'] .= $this->style.$this->fetchConfigurationValue(
 			'style', 'css'
 		);
 

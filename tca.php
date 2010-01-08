@@ -40,15 +40,18 @@ $TCA['tx_sfjquery_scripts'] = array (
 			'exclude' => 0,		
 			'label' => 'LLL:EXT:sfjquery/locallang_db.xml:tx_sfjquery_scripts.domscriptfile',		
 			'config' => array (
-				'type' => 'group',
-				'internal_type' => 'file',
-				'allowed' => '',	
-				'disallowed' => 'php,php3',	
-				'max_size' => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],	
-				'uploadfolder' => 'uploads/tx_sfjquery',
-				'size' => 1,	
-				'minitems' => 0,
-				'maxitems' => 1,
+				'type' => 'input',	
+				'size' => '30',	
+				'wizards' => array(
+					'_PADDING' => 2,
+					'link' => array(
+						'type' => 'popup',
+						'title' => 'Link',
+						'icon' => 'link_popup.gif',
+						'script' => 'browse_links.php?mode=wizard',
+						'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1'
+					),
+				),
 			)
 		),
 		'outscript' => array (		
@@ -65,15 +68,18 @@ $TCA['tx_sfjquery_scripts'] = array (
 			'exclude' => 0,		
 			'label' => 'LLL:EXT:sfjquery/locallang_db.xml:tx_sfjquery_scripts.outscriptfile',		
 			'config' => array (
-				'type' => 'group',
-				'internal_type' => 'file',
-				'allowed' => '',	
-				'disallowed' => 'php,php3',	
-				'max_size' => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],	
-				'uploadfolder' => 'uploads/tx_sfjquery',
-				'size' => 1,	
-				'minitems' => 0,
-				'maxitems' => 1,
+				'type' => 'input',	
+				'size' => '30',	
+				'wizards' => array(
+					'_PADDING' => 2,
+					'link' => array(
+						'type' => 'popup',
+						'title' => 'Link',
+						'icon' => 'link_popup.gif',
+						'script' => 'browse_links.php?mode=wizard',
+						'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1'
+					),
+				),
 			)
 		),
 		'content' => array (		
@@ -90,15 +96,18 @@ $TCA['tx_sfjquery_scripts'] = array (
 			'exclude' => 0,		
 			'label' => 'LLL:EXT:sfjquery/locallang_db.xml:tx_sfjquery_scripts.htmlfile',		
 			'config' => array (
-				'type' => 'group',
-				'internal_type' => 'file',
-				'allowed' => '',	
-				'disallowed' => 'php,php3',	
-				'max_size' => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],	
-				'uploadfolder' => 'uploads/tx_sfjquery',
-				'size' => 1,	
-				'minitems' => 0,
-				'maxitems' => 1,
+				'type' => 'input',	
+				'size' => '30',	
+				'wizards' => array(
+					'_PADDING' => 2,
+					'link' => array(
+						'type' => 'popup',
+						'title' => 'Link',
+						'icon' => 'link_popup.gif',
+						'script' => 'browse_links.php?mode=wizard',
+						'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1'
+					),
+				),
 			)
 		),
 		'ts' => array (		
@@ -115,30 +124,36 @@ $TCA['tx_sfjquery_scripts'] = array (
 			'exclude' => 0,		
 			'label' => 'LLL:EXT:sfjquery/locallang_db.xml:tx_sfjquery_scripts.tsfile',		
 			'config' => array (
-				'type' => 'group',
-				'internal_type' => 'file',
-				'allowed' => '',	
-				'disallowed' => 'php,php3',	
-				'max_size' => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],	
-				'uploadfolder' => 'uploads/tx_sfjquery',
-				'size' => 1,	
-				'minitems' => 0,
-				'maxitems' => 1,
+				'type' => 'input',	
+				'size' => '30',	
+				'wizards' => array(
+					'_PADDING' => 2,
+					'link' => array(
+						'type' => 'popup',
+						'title' => 'Link',
+						'icon' => 'link_popup.gif',
+						'script' => 'browse_links.php?mode=wizard',
+						'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1'
+					),
+				),
 			)
 		),
 		'cssuifile' => array (		
 			'exclude' => 0,		
 			'label' => 'LLL:EXT:sfjquery/locallang_db.xml:tx_sfjquery_scripts.cssuifile',		
 			'config' => array (
-				'type' => 'group',
-				'internal_type' => 'file',
-				'allowed' => '',	
-				'disallowed' => 'php,php3',	
-				'max_size' => $GLOBALS['TYPO3_CONF_VARS']['BE']['maxFileSize'],	
-				'uploadfolder' => 'uploads/tx_sfjquery',
-				'size' => 1,	
-				'minitems' => 0,
-				'maxitems' => 1,
+				'type' => 'input',	
+				'size' => '30',	
+				'wizards' => array(
+					'_PADDING' => 2,
+					'link' => array(
+						'type' => 'popup',
+						'title' => 'Link',
+						'icon' => 'link_popup.gif',
+						'script' => 'browse_links.php?mode=wizard',
+						'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1'
+					),
+				),
 			)
 		),
 		'css' => array (		
@@ -153,7 +168,7 @@ $TCA['tx_sfjquery_scripts'] = array (
 		),
 	),
 	'types' => array (
-		'0' => array('showitem' => 'hidden;;1;;1-1-1, name, domscript, domscriptfile, outscript, outscriptfile, content, htmlfile, ts, tsfile, cssuifile, css')
+		'0' => array('showitem' => '--div--;name,hidden;;1;;1-1-1, name, --div--;JavaScript, domscript;;;enable-tab;, domscriptfile, outscript;;;enable-tab;, outscriptfile, --div--;HTML, content;;;enable-tab;, htmlfile, --div--;TypoScript, ts;;;enable-tab;, tsfile, --div--;CSS, cssuifile, css;;;enable-tab;')
 	),
 	'palettes' => array (
 		'1' => array('showitem' => '')

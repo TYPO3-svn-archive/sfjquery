@@ -29,35 +29,12 @@ $TCA['tx_sfjquery_scripts'] = array (
 		'cruser_id' => 'cruser_id',
 		'default_sortby' => 'ORDER BY name',	
 		'delete' => 'deleted',	
+		'dividers2tabs' => 1,
 		'enablecolumns' => array (		
 			'disabled' => 'hidden',
 		),
 		'dynamicConfigFile' => t3lib_extMgm::extPath($_EXTKEY).'tca.php',
-		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_sfjquery_scripts.gif',
+		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_sfjquery_scripts.png',
 	),
 );
-
-$tempColumns = array (
-	'tx_sfjquery_script' => array (		
-		'exclude' => 0,		
-		'label' => 'LLL:EXT:sfjquery/locallang_db.xml:tt_content.tx_sfjquery_script',		
-		'config' => array (
-			'type' => 'select',	
-			'items' => array (
-				array('',0),
-			),
-			'foreign_table' => 'tx_sfjquery_scripts',	
-			'foreign_table_where' => 'ORDER BY tx_sfjquery_scripts.uid',	
-			'size' => 1,	
-			'minitems' => 0,
-			'maxitems' => 1,	
-			"MM" => "tt_content_tx_sfjquery_script_mm",
-		)
-	),
-);
-
-
-t3lib_div::loadTCA('tt_content');
-t3lib_extMgm::addTCAcolumns('tt_content',$tempColumns,1);
-t3lib_extMgm::addToAllTCAtypes('tt_content','tx_sfjquery_script;;;;1-1-1');
 ?>

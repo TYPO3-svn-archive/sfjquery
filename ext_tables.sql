@@ -11,41 +11,16 @@ CREATE TABLE tx_sfjquery_scripts (
 	hidden tinyint(4) DEFAULT '0' NOT NULL,
 	name tinytext,
 	domscript text,
-	domscriptfile text,
+	domscriptfile tinytext,
 	outscript text,
-	outscriptfile text,
+	outscriptfile tinytext,
 	content text,
-	htmlfile text,
+	htmlfile tinytext,
 	ts text,
-	tsfile text,
-	cssuifile text,
+	tsfile tinytext,
+	cssuifile tinytext,
 	css text,
 	
 	PRIMARY KEY (uid),
 	KEY parent (pid)
-);
-
-
-
-
-#
-# Table structure for table 'tt_content_tx_sfjquery_script_mm'
-# 
-#
-CREATE TABLE tt_content_tx_sfjquery_script_mm (
-  uid_local int(11) DEFAULT '0' NOT NULL,
-  uid_foreign int(11) DEFAULT '0' NOT NULL,
-  tablenames varchar(30) DEFAULT '' NOT NULL,
-  sorting int(11) DEFAULT '0' NOT NULL,
-  KEY uid_local (uid_local),
-  KEY uid_foreign (uid_foreign)
-);
-
-
-
-#
-# Table structure for table 'tt_content'
-#
-CREATE TABLE tt_content (
-	
 );
