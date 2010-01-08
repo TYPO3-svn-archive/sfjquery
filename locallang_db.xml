@@ -27,29 +27,54 @@
 			<label index="flexform.tsFile">Add a TS-File which will be added to the above field</label>
 			<label index="flexform.cssFile">In jQuery you can define a path to CSS-Framework</label>
 			<label index="flexform.style">Define your own StyleSheets</label>
+			<label index="tx_sfjquery_scripts">jQuery scripts</label>
+			<label index="tx_sfjquery_scripts.name">name</label>
+			<label index="tx_sfjquery_scripts.domscript">domscript</label>
+			<label index="tx_sfjquery_scripts.domscriptfile">domscriptfile</label>
+			<label index="tx_sfjquery_scripts.outscript">outscript</label>
+			<label index="tx_sfjquery_scripts.outscriptfile">outscriptfile</label>
+			<label index="tx_sfjquery_scripts.content">content</label>
+			<label index="tx_sfjquery_scripts.htmlfile">htmlfile</label>
+			<label index="tx_sfjquery_scripts.ts">ts</label>
+			<label index="tx_sfjquery_scripts.tsfile">tsfile</label>
+			<label index="tx_sfjquery_scripts.cssuifile">cssuifile</label>
+			<label index="tx_sfjquery_scripts.css">css</label>
+			<label index="tt_content.tx_sfjquery_script">script</label>
 		</languageKey>
 		<languageKey index="de" type="array">
-			<label index="tt_content.list_type_pi1">SF jQuery</label>
+			<label index="tx_sfjquery_scripts">SF jQuery</label>
 			<label index="flexform.page.script">jQuery-Script</label>
 			<label index="flexform.page.html">HTML</label>
 			<label index="flexform.page.images">Bilder</label>
 			<label index="flexform.page.css">CSS</label>
 			<label index="flexform.page.ts">TypoScript</label>
-			<label index="flexform.domscript">FÃ¼ge hier dein Script ein das sich innerhalb von domready befinden soll</label>
-			<label index="flexform.domFile">FÃ¼ge eine JS-Datei ein, deren Inhalt dem Feld hier drÃ¼ber hinzugefÃ¼gt wird</label>
-			<label index="flexform.outscript">FÃ¼ge hier deinen Code ein, der auÃŸerhalb von domready definiert werden soll</label>
-			<label index="flexform.outFile">FÃ¼ge eine JS-Datei ein, deren Inhalt dem Feld hier drÃ¼ber hinzugefÃ¼gt wird</label>
-			<label index="flexform.content">EinzufÃ¼gender HTML-Code</label>
-			<label index="flexform.htmlFile">FÃ¼ge eine HTML-Datei ein, deren Inhalt dem Feld hier drÃ¼ber hinzugefÃ¼gt wird</label>
+			<label index="flexform.domscript">Füge hier dein Script ein das sich innerhalb von domready befinden soll</label>
+			<label index="flexform.domFile">Füge eine JS-Datei ein, deren Inhalt dem Feld hier drüber hinzugefügt wird</label>
+			<label index="flexform.outscript">Füge hier deinen Code ein, der außerhalb von domready definiert werden soll</label>
+			<label index="flexform.outFile">Füge eine JS-Datei ein, deren Inhalt dem Feld hier drüber hinzugefügt wird</label>
+			<label index="flexform.content">Einzufügender HTML-Code</label>
+			<label index="flexform.htmlFile">Füge eine HTML-Datei ein, deren Inhalt dem Feld hier drüber hinzugefügt wird</label>
 			<label index="flexform.directory">Bilder-Verzeichnis</label>
-			<label index="flexform.images">Bilder: FÃ¼ge diese mit ###IMG###in die HTML-Box ein.</label>
-			<label index="flexform.height">Globale BilderhÃ¶he</label>
+			<label index="flexform.images">Bilder: Füge diese mit ###IMG###in die HTML-Box ein.</label>
+			<label index="flexform.height">Globale Bilderhöhe</label>
 			<label index="flexform.width">Globale Bilderbreite</label>
-			<label index="flexform.links">FÃ¼ge hier Links fÃ¼r die jeweiligen Bilder ein.</label>
-			<label index="flexform.ts">Hier kÃ¶nnen Sie Ihr eigenes TypoScript einfÃ¼gen</label>
-			<label index="flexform.tsFile">FÃ¼ge eine TS-Datei ein, deren Inhalt dem Feld hier drÃ¼ber hinzugefÃ¼gt wird</label>
+			<label index="flexform.links">Füge hier Links für die jeweiligen Bilder ein.</label>
+			<label index="flexform.ts">Hier können Sie Ihr eigenes TypoScript einfügen</label>
+			<label index="flexform.tsFile">Füge eine TS-Datei ein, deren Inhalt dem Feld hier drüber hinzugefügt wird</label>
 			<label index="flexform.cssFile">In jQuery kannst du einen Pfad zum jQuery CSS-Framework erstellen</label>
 			<label index="flexform.style">Erstelle hier dein eigenes StyleSheet</label>
+			<label index="tx_sfjquery_scripts.name">name</label>
+			<label index="tx_sfjquery_scripts.domscript">domscript</label>
+			<label index="tx_sfjquery_scripts.domscriptfile">domscriptfile</label>
+			<label index="tx_sfjquery_scripts.outscript">outscript</label>
+			<label index="tx_sfjquery_scripts.outscriptfile">outscriptfile</label>
+			<label index="tx_sfjquery_scripts.content">content</label>
+			<label index="tx_sfjquery_scripts.htmlfile">htmlfile</label>
+			<label index="tx_sfjquery_scripts.ts">ts</label>
+			<label index="tx_sfjquery_scripts.tsfile">tsfile</label>
+			<label index="tx_sfjquery_scripts.cssuifile">cssuifile</label>
+			<label index="tx_sfjquery_scripts.css">css</label>
+			<label index="tt_content.tx_sfjquery_script">script</label>
 		</languageKey>
 	</data>
 </T3locallang>

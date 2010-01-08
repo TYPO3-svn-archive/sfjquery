@@ -2,7 +2,7 @@
 /***************************************************************
 *  Copyright notice
 *
-*  (c) 2009 Stefan Froemken <firma@sfroemken.de>
+*  (c) 2010 Stefan Froemken <firma@sfroemken.de>
 *  All rights reserved
 *
 *  This script is part of the TYPO3 project. The TYPO3 project is
