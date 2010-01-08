@@ -37,4 +37,6 @@ $TCA['tx_sfjquery_scripts'] = array (
 		'iconfile'          => t3lib_extMgm::extRelPath($_EXTKEY).'icon_tx_sfjquery_scripts.png',
 	),
 );
+
+t3lib_extMgm::addStaticFile($_EXTKEY,'static/sfjquery/', 'sfjquery');
 ?>

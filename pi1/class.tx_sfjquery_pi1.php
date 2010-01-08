@@ -72,7 +72,7 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 
 		$markerArray['###JQUERY_PATH###'] = $this->jqueryPath;
 
-		if($this->extConf['enableMoreJQuery'] == 1) {
+		if($this->conf['enableMoreJQuery'] == 1) {
 			$markerArray['###JQUERY_UI_PATH###'] = $this->jqueryUIPath;
 		} else {
 			$subpartArray['###JQUERY_UI###'] = '';
@@ -80,13 +80,13 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 
 		//Hook
 		//include other/additional JavaScript files
-		if(isset($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'])) {
+		if(isset($GLOBALS['TYPO3_CONF_VARS']['conf'][$this->extKey]['otherJS'])) {
 			//Get template for including other js-files
 			$subpartOthers = $this->cObj->getSubpart(
 				$this->template['jquery'],
 				'###JQUERY_OTHERS###'
 			);
-			foreach($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'] as $userFunc) {
+			foreach($GLOBALS['TYPO3_CONF_VARS']['conf'][$this->extKey]['otherJS'] as $userFunc) {
 				$params = array();
 				$otherJSpath = t3lib_div::callUserFunction($userFunc, $params, $this);
 				if(is_file($otherJSpath)) {
@@ -106,7 +106,7 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 		//Ensure that header part is added only once to the page
 		//and check if sfjquery should be used only as template engine
 		$key = $this->prefixId.'_'.md5($this->template['jquery']);
-		if(!isset($GLOBALS['TSFE']->additionalHeaderData[$key]) && !$this->extConf['useAsTemplateMachine']) {
+		if(!isset($GLOBALS['TSFE']->additionalHeaderData[$key]) && !$this->conf['useAsTemplateMachine']) {
 			$GLOBALS['TSFE']->additionalHeaderData[$key] =
 				$this->cObj->substituteMarkerArrayCached(
 					$this->template['jquery'], $markerArray, $subpartArray
@@ -137,7 +137,7 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 		(trim($GLOBALS['TSFE']->register['sfOutScript']) != '')? $outScript = $GLOBALS['TSFE']->register['sfOutScript']."\n" : $outScript = '';
 		
 		//Check compatibility mode
-		if($this->extConf['activateCompatibilityMode'] == 1) {
+		if($this->conf['activateCompatibilityMode'] == 1) {
 			$compatibility = '$(document).ready(function() {'.CHR(10);
 		} else {
 			$compatibility = 'jQuery(document).ready(function($) {'.CHR(10);
@@ -145,7 +145,7 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 
 		//Insert user scripts
 		$headerData =	$styleSheet;
-		if(!$this->extConf['useAsTemplateMachine']) {
+		if(!$this->conf['useAsTemplateMachine']) {
 			$headerData .= '<script type="text/javascript">'.CHR(10).
 			$compatibility.$domReady.'});'.CHR(10).
 			$outScript.'</script>'; 
@@ -218,18 +218,15 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 	 * @return	nothing
 	 */
 	protected function init() {
-		//Get Extension Configuration
-		$this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['sfjquery']);
-
-		//Set jQueryPath or get it from extconf
-		if(trim($this->extConf['alternateJQueryFile']) != '') {
-		  $this->jqueryPath = trim($this->extConf['alternateJQueryFile']);
+		//Set jQueryPath or get it from conf
+		if(trim($this->conf['alternateJQueryFile']) != '') {
+		  $this->jqueryPath = trim($this->conf['alternateJQueryFile']);
 		} else {
 			$this->jqueryPath = t3lib_extMgm::siteRelPath($this->extKey).
 				'res/'.$this->jqueryFile;
 		}
-		if(trim($this->extConf['alternateJQueryUIFile']) != '') {
-		  $this->jqueryUIPath = trim($this->extConf['alternateJQueryUIFile']);
+		if(trim($this->conf['alternateJQueryUIFile']) != '') {
+		  $this->jqueryUIPath = trim($this->conf['alternateJQueryUIFile']);
 		} else {
 			$this->jqueryUIPath = t3lib_extMgm::siteRelPath($this->extKey).
 				'res/'.$this->jqueryUIFile;

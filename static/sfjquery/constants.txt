@@ -1,0 +1,18 @@
+###
+# These are the default TS-constants for sfjquery
+##
+
+plugin.tx_sfjquery_pi1 {
+		# cat=sfjquery; type=boolean; label=add UI jQuery script: Activate this checkbox to add the jquery UI-Script to your header-area.
+	enableMoreJQuery = 0
+		# cat=sfjquery; type=boolean; label=enable compatibility mode:If you are using jQuery with other JavaScript Frameworks like Scriptacolus, slideshows or slimboxes. If you check this you only can insert code into the domready textarea or you have to insert "jQuery" instead of "$" in your code. Activate this checkbox to activate jQuery compatibility mode.
+	activateCompatibilityMode = 0
+		# cat=sfjquery; type=boolean; label=Use as a plain template machine:After activating this option sfjquery deactivates all js-header and you can use sfjquery as a plain template machine without any includes jQuery-js-files.
+	useAsTemplateMachine = 0
+		# cat=sfjquery; type=string; label=change jquery-js-file:With this setting you can choose another jQuery-js-file. Leave empty to use default once. Values: fileadmin/jquery/jquery-1.3.2.min.js, others.
+	alternateJQueryFile =
+		# cat=sfjquery; type=string; label=change jquery-ui-js-file:With this setting you can choose another jQuery-ui-js-file. Leave empty to use default once. Values: fileadmin/jquery/jquery-ui-1.7.2.custom.min.js, others.
+	alternateJQueryUIFile =
+		# cat=sfjquery; type=boolean; label=add JS to upload files (ajaxupload.js):With this script you can define a button which opens a filebrowser and uploads your selected file directly to the server...if you want so...
+	addPluginAjaxupload = 0
+}
