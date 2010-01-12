@@ -241,7 +241,7 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 		
 		//Get additional data from database
 		//This data will be plased bevor all other content
-		$this->conf['scriptname'] .= $this->fetchConfigurationValue('scriptname');
+		$this->conf['scriptname'] = $this->fetchConfigurationValue('scriptname');
 
 		//If there was a selection made, than search for this selection
 		if($this->conf['scriptname'] != '') {

@@ -1,3 +1,12 @@
-2010-01-08 Stefan Froemken  <firma@sfroemken.de>
-
-	* initial code generated with kickstarter
+1.0.0: Initial release
+1.1.0: Removed templateFile, because it was used for headerparts only. Complete rewritten template part. Updated documentation. Now you can use your own jquery-files, if I not updated my extension fast enought :-)
+1.1.1: Bugfix: CSS_PATH was not replaced
+1.1.2: Added a hook to include additional JavaScript-Files
+1.1.3: Bugfix: There was a mistake in the hook-configuration
+1.2.0:
+New: domscript, outscript and HTML got a possibility to be added with content of external files.
+New: Now you can decide if you want to use sfjquery as a template machine only.
+Bugfix: Plugin can be added twice or more on one page again.
+Many code cleanings.
+1.3.0: Added functionality to save your Scripts to database. Updated documentation
+1.3.1: I added some sample scripts like accordion, tabs, sliders, dialog and datepicker to the database. Further only admins can edit, create and delete db-scripts on root-page.

@@ -20,6 +20,9 @@ if (TYPO3_MODE == 'BE') {
 	$TBE_MODULES_EXT['xMOD_db_new_content_el']['addElClasses']['tx_sfjquery_pi1_wizicon'] = t3lib_extMgm::extPath($_EXTKEY).'pi1/class.tx_sfjquery_pi1_wizicon.php';
 }
 
+
+t3lib_extMgm::allowTableOnStandardPages('tx_sfjquery_scripts');
+
 $TCA['tx_sfjquery_scripts'] = array (
 	'ctrl' => array (
 		'title'     => 'LLL:EXT:sfjquery/locallang_db.xml:tx_sfjquery_scripts',		
@@ -28,8 +31,9 @@ $TCA['tx_sfjquery_scripts'] = array (
 		'crdate'    => 'crdate',
 		'cruser_id' => 'cruser_id',
 		'default_sortby' => 'ORDER BY name',	
-		'delete' => 'deleted',	
+		'delete' => 'deleted',
 		'dividers2tabs' => 1,
+		'rootLevel' => '1',
 		'enablecolumns' => array (		
 			'disabled' => 'hidden',
 		),
