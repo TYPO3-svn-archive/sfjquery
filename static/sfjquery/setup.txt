@@ -1,0 +1,41 @@
+###
+# These are the default TS-setup for sfjquery
+##
+
+plugin.tx_sfjquery_pi1 = USER
+plugin.tx_sfjquery_pi1 {
+	enableMoreJquery = {$plugin.tx_sfjquery_pi1.enableMoreJquery}
+	activateCompatibilityMode = {$plugin.tx_sfjquery_pi1.activateCompatibilityMode}
+	useAsTemplateMachine = {$plugin.tx_sfjquery_pi1.useAsTemplateMachine}
+	alternateJqueryFile = {$plugin.tx_sfjquery_pi1.alternateJqueryFile}
+	alternateJqueryUiFile = {$plugin.tx_sfjquery_pi1.alternateJqueryUiFile}
+
+	addEffectBlind = {$plugin.tx_sfjquery_pi1.addEffectBlind}
+	addEffectBounce = {$plugin.tx_sfjquery_pi1.addEffectBounce}
+	addEffectClip = {$plugin.tx_sfjquery_pi1.addEffectClip}
+	addEffectCore = {$plugin.tx_sfjquery_pi1.addEffectCore}
+	addEffectDrop = {$plugin.tx_sfjquery_pi1.addEffectDrop}
+	addEffectExplode = {$plugin.tx_sfjquery_pi1.addEffectExplode}
+	addEffectFold = {$plugin.tx_sfjquery_pi1.addEffectFold}
+	addEffectHighlight = {$plugin.tx_sfjquery_pi1.addEffectHighlight}
+	addEffectPulsate = {$plugin.tx_sfjquery_pi1.addEffectPulsate}
+	addEffectScale = {$plugin.tx_sfjquery_pi1.addEffectScale}
+	addEffectShake = {$plugin.tx_sfjquery_pi1.addEffectShake}
+	addEffectSlide = {$plugin.tx_sfjquery_pi1.addEffectSlide}
+	addEffectTransfer = {$plugin.tx_sfjquery_pi1.addEffectTransfer}
+
+	addPluginAccordion = {$plugin.tx_sfjquery_pi1.addPluginAccordion}
+	addPluginCore = {$plugin.tx_sfjquery_pi1.addPluginCore}
+	addPluginDatepicker = {$plugin.tx_sfjquery_pi1.addPluginDatepicker}
+	addPluginDialog = {$plugin.tx_sfjquery_pi1.addPluginDialog}
+	addPluginDraggable = {$plugin.tx_sfjquery_pi1.addPluginDraggable}
+	addPluginDroppable = {$plugin.tx_sfjquery_pi1.addPluginDroppable}
+	addPluginProgressbar = {$plugin.tx_sfjquery_pi1.addPluginProgressbar}
+	addPluginResizable = {$plugin.tx_sfjquery_pi1.addPluginResizable}
+	addPluginSelectable = {$plugin.tx_sfjquery_pi1.addPluginSelectable}
+	addPluginSlider = {$plugin.tx_sfjquery_pi1.addPluginSlider}
+	addPluginSortable = {$plugin.tx_sfjquery_pi1.addPluginSortable}
+	addPluginTabs = {$plugin.tx_sfjquery_pi1.addPluginTabs}
+	
+	addPluginAjaxupload = {$plugin.tx_sfjquery_pi1.addPluginAjaxupload}
+}
