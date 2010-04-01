@@ -8,6 +8,20 @@
 		<languageKey index="default" type="array">
 			<label index="pi1_title">SF jQuery</label>
 			<label index="pi1_plus_wiz_description">With this plugin you can insert your own jQuery-Scripts</label>
+			<label index="const.enableMoreJquery">add UI jQuery script:Use as a plain template machine:Activate this checkbox to add ALL jquery UI-Plugins (Accordion, Tabs, Sliders) by default. Webclient has to load round about 200KB compressed.</label>
+			<label index="const.useAsTemplateMachine">Use as a plain template machine:After activating this option sfjquery deactivates all js-header and you can use sfjquery as a plain template machine without any includes jQuery-js-files.</label>
+			<label index="const.activateCompatibilityMode">enable compatibility mode:If you are using jQuery with other JavaScript Frameworks like Scriptacolus, slideshows or slimboxes. If you check this you only can insert code into the domready textarea or you have to insert "jQuery" instead of "$" in your code. Activate this checkbox to activate jQuery compatibility mode.</label>
+			<label index="const.alternateJqueryUiFile">change jquery-ui-js-file:With this setting you can choose another jQuery-ui-js-file. Leave empty to use default once. Values: fileadmin/jquery/jquery-ui-1.7.2.custom.min.js, others.</label>
+			<label index="const.alternateJqueryFile">change jquery-js-file:With this setting you can choose another jQuery-js-file. Leave empty to use default once. Values: fileadmin/jquery/jquery-1.3.2.min.js, others.</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="pi1_title">SF jQuery</label>
+			<label index="pi1_plus_wiz_description">Mit diesem Plugin kannst Du Deine eigenen jQuery-Scripte erstellen oder auf vorgefertigte Scripte für Tabs, Accordions, Progressbars und vielen mehr zugreifen.</label>
+			<label index="const.enableMoreJquery">Füge jQuery UI Skript hinzu:Aktiviere diese Checkbox um ALLE zum jQuery-UI gehörenden Plugins und Effekte zu laden (Accordion, Tabs, Sliders, Progressbar und viele mehr). Paketunabhängige Plugins müssen explizit angekreuzt werden. Achtung: Der Webclient muss dadurch ca. 200KB mehr laden.</label>
+			<label index="const.useAsTemplateMachine">Verwende als Templatemaschine:Durch aktivieren dieser Checkbox werden alle jQuery-Funktionalitäten deaktiviert und Du kannst sfjquery als reine Templatemaschine verwenden. Es werden durch sfjquery keine jquery-Dateien in Deine Seite eingefügt.</label>
+			<label index="const.activateCompatibilityMode">Aktiviere Kompatibilitätsmodus:Wenn Du sfjquery in Verbindung mit anderen Frameworks verwenden möchtest, wie z.B. Scriptacolus, slideshows or slimboxes, dann musst Du diese Checkbox aktivieren. In domready you can work with ($) but in outscript you have to use jQuery as indicator.</label>
+			<label index="const.alternateJqueryUiFile">Wähle andere jquery ui Datei:Wähle eine andere Datei für die jQuery-UI-Datei aus</label>
+			<label index="const.alternateJqueryFile">Wähle andere jquery Datei:Wähle eine andere Datei für die jQuery Datei aus. Beispiel: fileadmin/jquery/jquery-1.3.2.min.js, others.</label>
 		</languageKey>
 	</data>
 </T3locallang>
