@@ -89,17 +89,18 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 			foreach($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'] as $userFunc) {
 				$params = array();
 				$otherJSpath = t3lib_div::callUserFunction($userFunc, $params, $this);
+				if(!is_array($otherJSpath_arr)) $otherJSpath_arr = array();
 				$otherJSpath_arr = t3lib_div::array_merge_recursive_overrule($otherJSpath_arr, t3lib_div::trimExplode(',', $otherJSpath));
-				foreach($otherJSpath_arr as $value) {
-					if(is_file($value)) {
-						$subpartArray['###JQUERY_OTHERS###'] .= $this->cObj->substituteMarkerArray(
-							$subpartOthers, array(
-								'###JQUERY_OTHERS_PATH###' =>	htmlspecialchars($value)
-							)
-						);
-					} else {
-						$subpartArray['###JQUERY_OTHERS###'] .= '';
-					}
+			}
+			foreach($otherJSpath_arr as $value) {
+				if(is_file($value)) {
+					$subpartArray['###JQUERY_OTHERS###'] .= $this->cObj->substituteMarkerArray(
+						$subpartOthers, array(
+							'###JQUERY_OTHERS_PATH###' =>	htmlspecialchars($value)
+						)
+					);
+				} else {
+					$subpartArray['###JQUERY_OTHERS###'] .= '';
 				}
 			}
 		} else {
