@@ -158,6 +158,7 @@ class tx_sfjquery_otherjs {
 	public function pluginSlider() {
 		$path = $this->pluginCore().',';
 		$path .= $this->pluginWidget().',';
+		$path .= $this->pluginMouse().',';
 		return $path.t3lib_extMgm::siteRelPath('sfjquery').'res/jquery.ui.slider.min.js';
 	}
 	public function pluginTabs() {
