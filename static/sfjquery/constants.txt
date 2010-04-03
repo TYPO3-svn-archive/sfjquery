@@ -14,14 +14,14 @@ plugin.tx_sfjquery_pi1 {
 		# cat=plugin_sfjquery_basic/file; type=string; label=LLL:EXT:sfjquery/locallang.xml:const.alternateJqueryUiFile
 	alternateJqueryUiFile =
 
+		# cat=plugin_sfjquery_effects/enable/40; type=boolean; label=add Effect Core: This is the base class for all effects. Every effect includes this (Core) automatically. Enable this if you need only the Core.
+	addEffectCore = 0
 		# cat=plugin_sfjquery_effects/enable/10; type=boolean; label=add Effect Blind:Goto this website to see it in action: http://jqueryui.com/demos/effect/
 	addEffectBlind = 0
 		# cat=plugin_sfjquery_effects/enable/20; type=boolean; label=add Effect Bounce:Goto this website to see it in action: http://jqueryui.com/demos/effect/
 	addEffectBounce = 0
 		# cat=plugin_sfjquery_effects/enable/30; type=boolean; label=add Effect Clip:Goto this website to see it in action: http://jqueryui.com/demos/effect/
 	addEffectClip = 0
-		# cat=plugin_sfjquery_effects/enable/40; type=boolean; label=add Effect Core: This is the base class for all effects. Every effect includes this (Core) automatically. Enable this if you need only the Core.
-	addEffectCore = 0
 		# cat=plugin_sfjquery_effects/enable/50; type=boolean; label=add Effect Drop:Goto this website to see it in action: http://jqueryui.com/demos/effect/
 	addEffectDrop = 0
 		# cat=plugin_sfjquery_effects/enable/60; type=boolean; label=add Effect Explode:Goto this website to see it in action: http://jqueryui.com/demos/effect/
@@ -41,31 +41,45 @@ plugin.tx_sfjquery_pi1 {
 		# cat=plugin_sfjquery_effects/enable/130; type=boolean; label=add Effect Transfer:Goto this website to see it in action: http://jqueryui.com/demos/effect/
 	addEffectTransfer = 0
 
-		# cat=plugin_sfjquery_plugin/enable/10; type=boolean; label=add Plugin Accordion:Goto this website to see it in action: http://jqueryui.com/demos/
-	addPluginAccordion = 0
 		# cat=plugin_sfjquery_plugin/enable/20; type=boolean; label=add UI Core:This is the base class for the most Plugins. Every plugin includes this (Core) automatically. Enable this if you need only the UI-Core or if you have installed your own Plugin by hook.
 	addPluginCore = 0
-		# cat=plugin_sfjquery_plugin/enable/30; type=boolean; label=add Plugin Datepicker:Goto this website to see it in action: http://jqueryui.com/demos/
-	addPluginDatepicker = 0
-		# cat=plugin_sfjquery_plugin/enable/40; type=boolean; label=add Plugin Dialog:Goto this website to see it in action: http://jqueryui.com/demos/
-	addPluginDialog = 0
+		# cat=plugin_sfjquery_plugin/enable/20; type=boolean; label=add UI Widget:This is an additional class for many Plugins. Every plugin includes this (Widget) automatically if it was needed. So enable this if you need only the UI-Widget or if you have installed your own Plugin by hook.
+	addPluginWidget = 0
+		# cat=plugin_sfjquery_plugin/enable/20; type=boolean; label=add UI Mouse:This is an additional class for many Plugins. Every plugin includes this (Mouse) automatically if it was needed. So enable this if you need only the UI-Widget or if you have installed your own Plugin by hook.
+	addPluginMouse = 0
+		# cat=plugin_sfjquery_plugin/enable/20; type=boolean; label=add UI Position:This is an additional class for many Plugins. Every plugin includes this (Position) automatically if it was needed. So enable this if you need only the UI-Widget or if you have installed your own Plugin by hook.
+	addPluginPosition = 0
 		# cat=plugin_sfjquery_plugin/enable/50; type=boolean; label=add Plugin Draggable:Goto this website to see it in action: http://jqueryui.com/demos/
 	addPluginDraggable = 0
 		# cat=plugin_sfjquery_plugin/enable/60; type=boolean; label=add Plugin Droppable:Goto this website to see it in action: http://jqueryui.com/demos/
 	addPluginDroppable = 0
-		# cat=plugin_sfjquery_plugin/enable/70; type=boolean; label=add Plugin Progressbar:Goto this website to see it in action: http://jqueryui.com/demos/
-	addPluginProgressbar = 0
 		# cat=plugin_sfjquery_plugin/enable/80; type=boolean; label=add Plugin Resizable:Goto this website to see it in action: http://jqueryui.com/demos/
 	addPluginResizable = 0
 		# cat=plugin_sfjquery_plugin/enable/90; type=boolean; label=add Plugin Selectable:Goto this website to see it in action: http://jqueryui.com/demos/
 	addPluginSelectable = 0
-		# cat=plugin_sfjquery_plugin/enable/100; type=boolean; label=add Plugin Slider:Goto this website to see it in action: http://jqueryui.com/demos/
-	addPluginSlider = 0
 		# cat=plugin_sfjquery_plugin/enable/110; type=boolean; label=add Plugin Sortable:Goto this website to see it in action: http://jqueryui.com/demos/
 	addPluginSortable = 0
+		# cat=plugin_sfjquery_plugin/enable/10; type=boolean; label=add Plugin Accordion:Goto this website to see it in action: http://jqueryui.com/demos/
+	addPluginAccordion = 0
+		# cat=plugin_sfjquery_plugin/enable/10; type=boolean; label=add Plugin Autocomplete:Goto this website to see it in action: http://jqueryui.com/demos/
+	addPluginAutocomplete = 0
+		# cat=plugin_sfjquery_plugin/enable/10; type=boolean; label=add Plugin Button:Goto this website to see it in action: http://jqueryui.com/demos/
+	addPluginButton = 0
+		# cat=plugin_sfjquery_plugin/enable/40; type=boolean; label=add Plugin Dialog:Goto this website to see it in action: http://jqueryui.com/demos/
+	addPluginDialog = 0
+		# cat=plugin_sfjquery_plugin/enable/100; type=boolean; label=add Plugin Slider:Goto this website to see it in action: http://jqueryui.com/demos/
+	addPluginSlider = 0
 		# cat=plugin_sfjquery_plugin/enable/120; type=boolean; label=add Plugin Tabs:Goto this website to see it in action: http://jqueryui.com/demos/
 	addPluginTabs = 0
+		# cat=plugin_sfjquery_plugin/enable/30; type=boolean; label=add Plugin Datepicker:Goto this website to see it in action: http://jqueryui.com/demos/
+	addPluginDatepicker = 0
+		# cat=plugin_sfjquery_plugin/enable/70; type=boolean; label=add Plugin Progressbar:Goto this website to see it in action: http://jqueryui.com/demos/
+	addPluginProgressbar = 0
 	
 		# cat=plugin_sfjquery_plugin/enable; type=boolean; label=add JS to upload files (ajaxupload.js):With this script you can define a button which opens a filebrowser and uploads your selected file directly to the server...if you want so...
 	addPluginAjaxupload = 0
+		# cat=plugin_sfjquery_plugin/enable; type=boolean; label=add JS to enable a reflection effect on your images:With this script you can add an reflection effect on to your images
+	addPluginReflection = 0
+		# cat=plugin_sfjquery_plugin/enable; type=boolean; label=add JS to enable an image slideshow:With this script you can add an image slideshow effect
+	addPluginSlideshow = 0
 }

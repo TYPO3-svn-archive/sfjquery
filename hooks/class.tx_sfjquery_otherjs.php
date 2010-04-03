@@ -180,4 +180,12 @@ class tx_sfjquery_otherjs {
 	public function ajaxUpload() {
 		return t3lib_extMgm::siteRelPath('sfjquery').'res/ajaxupload.js';
 	}
+	//Additional Plugin Image Reflection
+	public function reflection() {
+		return t3lib_extMgm::siteRelPath('sfjquery').'res/reflection.js';
+	}
+	//Additional Plugin Slideshow
+	public function slideshow() {
+		return t3lib_extMgm::siteRelPath('sfjquery').'res/jquery.aslideshow.min.js';
+	}
 }

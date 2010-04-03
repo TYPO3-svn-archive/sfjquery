@@ -10,10 +10,10 @@ plugin.tx_sfjquery_pi1 {
 	alternateJqueryFile = {$plugin.tx_sfjquery_pi1.alternateJqueryFile}
 	alternateJqueryUiFile = {$plugin.tx_sfjquery_pi1.alternateJqueryUiFile}
 
+	addEffectCore = {$plugin.tx_sfjquery_pi1.addEffectCore}
 	addEffectBlind = {$plugin.tx_sfjquery_pi1.addEffectBlind}
 	addEffectBounce = {$plugin.tx_sfjquery_pi1.addEffectBounce}
 	addEffectClip = {$plugin.tx_sfjquery_pi1.addEffectClip}
-	addEffectCore = {$plugin.tx_sfjquery_pi1.addEffectCore}
 	addEffectDrop = {$plugin.tx_sfjquery_pi1.addEffectDrop}
 	addEffectExplode = {$plugin.tx_sfjquery_pi1.addEffectExplode}
 	addEffectFold = {$plugin.tx_sfjquery_pi1.addEffectFold}
@@ -24,18 +24,25 @@ plugin.tx_sfjquery_pi1 {
 	addEffectSlide = {$plugin.tx_sfjquery_pi1.addEffectSlide}
 	addEffectTransfer = {$plugin.tx_sfjquery_pi1.addEffectTransfer}
 
-	addPluginAccordion = {$plugin.tx_sfjquery_pi1.addPluginAccordion}
 	addPluginCore = {$plugin.tx_sfjquery_pi1.addPluginCore}
-	addPluginDatepicker = {$plugin.tx_sfjquery_pi1.addPluginDatepicker}
-	addPluginDialog = {$plugin.tx_sfjquery_pi1.addPluginDialog}
+	addPluginWidget = {$plugin.tx_sfjquery_pi1.addPluginWidget}
+	addPluginMouse = {$plugin.tx_sfjquery_pi1.addPluginMouse}
+	addPluginPosition = {$plugin.tx_sfjquery_pi1.addPluginPosition}
 	addPluginDraggable = {$plugin.tx_sfjquery_pi1.addPluginDraggable}
 	addPluginDroppable = {$plugin.tx_sfjquery_pi1.addPluginDroppable}
-	addPluginProgressbar = {$plugin.tx_sfjquery_pi1.addPluginProgressbar}
 	addPluginResizable = {$plugin.tx_sfjquery_pi1.addPluginResizable}
 	addPluginSelectable = {$plugin.tx_sfjquery_pi1.addPluginSelectable}
-	addPluginSlider = {$plugin.tx_sfjquery_pi1.addPluginSlider}
 	addPluginSortable = {$plugin.tx_sfjquery_pi1.addPluginSortable}
+	addPluginAccordion = {$plugin.tx_sfjquery_pi1.addPluginAccordion}
+	addPluginAutocomplete = {$plugin.tx_sfjquery_pi1.addPluginAutocomplete}
+	addPluginButton = {$plugin.tx_sfjquery_pi1.addPluginButton}
+	addPluginDialog = {$plugin.tx_sfjquery_pi1.addPluginDialog}
+	addPluginSlider = {$plugin.tx_sfjquery_pi1.addPluginSlider}
 	addPluginTabs = {$plugin.tx_sfjquery_pi1.addPluginTabs}
+	addPluginDatepicker = {$plugin.tx_sfjquery_pi1.addPluginDatepicker}
+	addPluginProgressbar = {$plugin.tx_sfjquery_pi1.addPluginProgressbar}
 	
 	addPluginAjaxupload = {$plugin.tx_sfjquery_pi1.addPluginAjaxupload}
+	addPluginReflection = {$plugin.tx_sfjquery_pi1.addPluginReflection}
+	addPluginSlideshow = {$plugin.tx_sfjquery_pi1.addPluginSlideshow}
 }

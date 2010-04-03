@@ -107,6 +107,35 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 			$subpartArray['###JQUERY_OTHERS###'] = '';
 		}
 
+		//Hook
+		//include other/additional CSS files
+		if(isset($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherCSS'])) {
+			//Get template for including other css-files
+			$subpartOtherCSS = $this->cObj->getSubpart(
+				$this->template['jquery'],
+				'###JQUERY_OTHER_CSS###'
+			);
+			foreach($GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherCSS'] as $userFunc) {
+				$params = array();
+				$otherCSSpath .= t3lib_div::callUserFunction($userFunc, $params, $this).',';
+			}
+			$otherCSSpath = t3lib_div::uniqueList($otherCSSpath);
+			$otherCSSpath_arr = t3lib_div::trimExplode(',', $otherCSSpath);
+			foreach($otherCSSpath_arr as $value) {
+				if(is_file($value)) {
+					$subpartArray['###JQUERY_OTHER_CSS###'] .= $this->cObj->substituteMarkerArray(
+						$subpartOtherCSS, array(
+							'###JQUERY_OTHER_CSS_PATH###' =>	htmlspecialchars($value)
+						)
+					);
+				} else {
+					$subpartArray['###JQUERY_OTHER_CSS###'] .= '';
+				}
+			}
+		} else {
+			$subpartArray['###JQUERY_OTHER_CSS###'] = '';
+		}
+
 		//Ensure that header part is added only once to the page
 		//and check if sfjquery should be used only as template engine
 		$key = $this->prefixId.'_'.md5($this->template['jquery']);
@@ -166,12 +195,8 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 		//Generate HTML-Code for each image and link.
 		foreach($images_arr AS $key => $value) {
 			if($value) {
-				$loop = $key == 0 ? 1 : 0;
-				$image = '<div class="myTween myTween'.$this->pluginCounter.
-					'" title="loop'.$loop.'">
-					<img src="'.$this->conf['directory'].$value.'" height="'.
+				$image = '<img src="'.$this->conf['directory'].$value.'" height="'.
 					$this->conf['height'].'" width="'.$this->conf['width'].'">
-					</div>
 				';
 
 				//Generate a link if configured
@@ -262,17 +287,17 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->effectTransfer';
 		}
 
-		if($this->conf['addPluginAccordion']) {
-			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginAccordion';
-		}
 		if($this->conf['addPluginCore']) {
 			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginCore';
 		}
-		if($this->conf['addPluginDatepicker']) {
-			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginDatepicker';
+		if($this->conf['addPluginWidget']) {
+			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginWidget';
 		}
-		if($this->conf['addPluginDialog']) {
-			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginDialog';
+		if($this->conf['addPluginMouse']) {
+			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginMouse';
+		}
+		if($this->conf['addPluginPosition']) {
+			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginPosition';
 		}
 		if($this->conf['addPluginDraggable']) {
 			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginDraggable';
@@ -280,27 +305,49 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 		if($this->conf['addPluginDroppable']) {
 			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginDroppable';
 		}
-		if($this->conf['addPluginProgressbar']) {
-			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginProgressbar';
-		}
 		if($this->conf['addPluginResizable']) {
 			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginResizable';
 		}
 		if($this->conf['addPluginSelectable']) {
 			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginSelectable';
 		}
-		if($this->conf['addPluginSlider']) {
-			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginSlider';
-		}
 		if($this->conf['addPluginSortable']) {
 			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginSortable';
+		}
+		if($this->conf['addPluginAccordion']) {
+			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginAccordion';
+		}
+		if($this->conf['addPluginAutocomplete']) {
+			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginAutocomplete';
+		}
+		if($this->conf['addPluginButton']) {
+			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginButton';
+		}
+		if($this->conf['addPluginDialog']) {
+			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginDialog';
+		}
+		if($this->conf['addPluginSlider']) {
+			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginSlider';
 		}
 		if($this->conf['addPluginTabs']) {
 			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginTabs';
 		}
+		if($this->conf['addPluginDatepicker']) {
+			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginDatepicker';
+		}
+		if($this->conf['addPluginProgressbar']) {
+			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->pluginProgressbar';
+		}
 
 		if($this->conf['addPluginAjaxupload']) {
 			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->ajaxUpload';
+		}
+		if($this->conf['addPluginReflection']) {
+			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->reflection';
+		}
+		if($this->conf['addPluginSlideshow']) {
+			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherCSS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_othercss.php:tx_sfjquery_othercss->slideshow';
+			$GLOBALS['TYPO3_CONF_VARS']['EXTCONF'][$this->extKey]['otherJS'][] = t3lib_extMgm::siteRelPath($this->extKey).'hooks/class.tx_sfjquery_otherjs.php:tx_sfjquery_otherjs->slideshow';
 		}
 
 		//Set jQueryPath or get it from conf
