@@ -171,9 +171,9 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 
 		//Check compatibility mode
 		if($this->conf['activateCompatibilityMode'] == 1) {
-			$compatibility = '$(document).ready(function() {'.CHR(10);
-		} else {
 			$compatibility = 'jQuery(document).ready(function($) {'.CHR(10);
+		} else {
+			$compatibility = '$(document).ready(function() {'.CHR(10);
 		}
 
 		//Insert user scripts
