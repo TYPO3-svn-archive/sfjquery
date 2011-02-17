@@ -386,9 +386,9 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 			$row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res);
 
 			$this->domscript = $row['domscript'].CHR(10);
-			if(is_file($row['domfile'])) $this->domscript .= file_get_contents($row['domfile'])."\n";
+			if(is_file($row['domfile'])) $this->domscript .= file_get_contents($row['domscriptfile'])."\n";
 			$this->outscript = $row['outscript'].CHR(10);
-			if(is_file($row['outfile'])) $this->outscript .= file_get_contents($row['outfile'])."\n";
+			if(is_file($row['outfile'])) $this->outscript .= file_get_contents($row['outscriptfile'])."\n";
 			$this->content = $row['content'].CHR(10);
 			if(is_file($row['htmlfile'])) $this->content .= file_get_contents($row['htmlfile'])."\n";
 			$this->ts = $row['ts'].CHR(10);
