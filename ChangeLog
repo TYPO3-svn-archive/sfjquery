@@ -1,13 +1,26 @@
-1.0.0: Initial release
-1.1.0: Removed templateFile, because it was used for headerparts only. Complete rewritten template part. Updated documentation. Now you can use your own jquery-files, if I not updated my extension fast enought :-)
-1.1.1: Bugfix: CSS_PATH was not replaced
-1.1.2: Added a hook to include additional JavaScript-Files
-1.1.3: Bugfix: There was a mistake in the hook-configuration
+1.3.7:
+- Bug #12866: domfile instead of domscriptfile
+- updated to jQuery 1.4.4
+- updated to jquery-ui 1.8.9
+- updated all jquery samples to new jquery version
+- suppress_icons = 1 for hiding images below selectbox
+- imagegeneration has its own class now, because it has nothing to do with jquery
+- images will be generated with cObj now
+- changed default image directory to uploads/media/ in flexform
+
+
+1.3.6: BUG: Mistake in Compatibilitymode
+1.3.1: I added some sample scripts like accordion, tabs, sliders, dialog and datepicker to the database. Further only admins can edit, create and delete db-scripts on root-page.
+1.3.0: Added functionality to save your Scripts to database. Updated documentation
+
 1.2.0:
 New: domscript, outscript and HTML got a possibility to be added with content of external files.
 New: Now you can decide if you want to use sfjquery as a template machine only.
 Bugfix: Plugin can be added twice or more on one page again.
 Many code cleanings.
-1.3.0: Added functionality to save your Scripts to database. Updated documentation
-1.3.1: I added some sample scripts like accordion, tabs, sliders, dialog and datepicker to the database. Further only admins can edit, create and delete db-scripts on root-page.
-1.3.6: BUG: Mistake in Compatibilitymode
+
+1.1.3: Bugfix: There was a mistake in the hook-configuration
+1.1.2: Added a hook to include additional JavaScript-Files
+1.1.1: Bugfix: CSS_PATH was not replaced
+1.1.0: Removed templateFile, because it was used for headerparts only. Complete rewritten template part. Updated documentation. Now you can use your own jquery-files, if I not updated my extension fast enought :-)
+1.0.0: Initial release

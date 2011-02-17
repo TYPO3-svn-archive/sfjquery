@@ -17,6 +17,7 @@
 							<label>LLL:EXT:sfjquery/locallang_db.xml:flexform.scriptname</label>
 							<config>
 								<type>select</type>
+								<suppress_icons>1</suppress_icons>
 								<items>
 									<numIndex index="0" type="array">
 										<numIndex index="0"></numIndex>
@@ -247,7 +248,7 @@
 							<label>LLL:EXT:sfjquery/locallang_db.xml:flexform.directory</label>
 							<config>
 								<type>input</type>
-								<default>uploads/</default>
+								<default>uploads/media/</default>
 								<size>30</size>
 							</config>
 						</TCEforms>

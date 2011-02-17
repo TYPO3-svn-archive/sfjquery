@@ -70,7 +70,7 @@
 			<label index="flexform.images">Bilder: Füge diese mit ###IMG###in die HTML-Box ein.</label>
 			<label index="flexform.height">Globale Bilderhöhe</label>
 			<label index="flexform.width">Globale Bilderbreite</label>
-			<label index="flexform.links">Füge hier Links für die jeweiligen Bilder ein.</label>
+			<label index="flexform.links"><![CDATA[Füge hier Links für die jeweiligen Bilder ein. Ein Link pro Zeile. Link kann von Parametern mit | getrennt werden (z.B. 6|&tx_myext[id]=42)]]></label>
 			<label index="flexform.ts">Hier können Sie Ihr eigenes TypoScript einfügen</label>
 			<label index="flexform.tsFile">Füge eine TS-Datei ein, deren Inhalt dem Feld hier drüber hinzugefügt wird</label>
 			<label index="flexform.cssFile">In jQuery kannst du einen Pfad zum jQuery CSS-Framework erstellen</label>

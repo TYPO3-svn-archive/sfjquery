@@ -183,35 +183,10 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 			$compatibility.$domReady.'});'.CHR(10).
 			$outScript.'</script>';
 		}
-		$GLOBALS['TSFE']->additionalHeaderData[100] =	$headerData;
+		$GLOBALS['TSFE']->additionalHeaderData[100] = $headerData;
 
-		//explode array and remove empty entries
-		$images_arr = t3lib_div::trimExplode(',', $this->conf['images'], 1);
-
-		//How many images are defined?
-		$this->count = count($images_arr);
-		$links_row_arr = t3lib_div::trimExplode(CHR(10), $this->conf['links'], 0);
-
-		//Generate HTML-Code for each image and link.
-		foreach($images_arr AS $key => $value) {
-			if($value) {
-				$image = '<img src="'.$this->conf['directory'].$value.'" height="'.
-					$this->conf['height'].'" width="'.$this->conf['width'].'">
-				';
-
-				//Generate a link if configured
-				$links_arr = t3lib_div::trimExplode('|', $links_row_arr[$key], 0);
-				$link['parameter'] = $links_arr[0];
-				$link['additionalParams'] = $links_arr[1];
-				$content_img .= $this->cObj->typoLink($image, $link);
-			}
-
-			//Errorhandling if file can't be found
-			if(!is_file($this->conf['directory'].$value)) {
-				$content_img = 'Check TS (directory.), because file can\'t be found<br />';
-				$content_img .= 'File: '.$this->conf['directory'].$value;
-			}
-		}
+		$imgObj = t3lib_div::makeInstance('tx_sfjquery_images', $this->conf);
+        $content_img = $imgObj->generateImagesContent();
 
 		//Templating HTML-Area
 		$content = $this->cObj->substituteMarkerArray(
