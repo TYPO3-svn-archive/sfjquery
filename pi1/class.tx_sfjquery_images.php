@@ -68,14 +68,13 @@ class tx_sfjquery_images extends tslib_cObj {
 				$imgConf['stdWrap.']['typolink.']['parameter'] = $linkParts[0];
 				$imgConf['stdWrap.']['typolink.']['additionalParams'] = $linkParts[1];
 				
-				$content .= $this->IMAGE($imgConf);
-			} else {
-				$content = 'Check TS (directory.), because file can\'t be found<br />';
-				$content .= 'File: '.$this->conf['directory'].$value;
+				$imagesContent .= $markerArray['###IMG' . ($key + 1) . '###'] = $this->IMAGE($imgConf);
 			}
 		}
 		
-		return $content;
+		$markerArray['###IMG###'] = $imagesContent;
+		
+		return $markerArray;
     }
 }
 ?>

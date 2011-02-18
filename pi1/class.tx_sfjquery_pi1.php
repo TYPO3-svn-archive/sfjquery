@@ -186,13 +186,11 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 		$GLOBALS['TSFE']->additionalHeaderData[100] = $headerData;
 
 		$imgObj = t3lib_div::makeInstance('tx_sfjquery_images', $this->conf);
-        $content_img = $imgObj->generateImagesContent();
+        $imagesMarker = $imgObj->generateImagesContent();
 
 		//Templating HTML-Area
 		$content = $this->cObj->substituteMarkerArray(
-			$this->conf['content'], array(
-				'###IMG###' => $content_img,
-			)
+			$this->conf['content'], $imagesMarker
 		);
 
 		//If TS-field is filled, then generate HTML-content
