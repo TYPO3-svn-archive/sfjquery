@@ -37,7 +37,7 @@
  */
 class tx_sfjquery_othercss {
 	//Additional Plugin Slideshow
-	public function slideshow() {
+	public function pluginSlideshow() {
 		return t3lib_extMgm::siteRelPath('sfjquery').'res/jquery.aslideshow/simple/styles.css';
 	}
 }

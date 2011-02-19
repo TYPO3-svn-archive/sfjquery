@@ -16,6 +16,7 @@ plugin.tx_sfjquery_pi1 {
 	addEffectClip = {$plugin.tx_sfjquery_pi1.addEffectClip}
 	addEffectDrop = {$plugin.tx_sfjquery_pi1.addEffectDrop}
 	addEffectExplode = {$plugin.tx_sfjquery_pi1.addEffectExplode}
+	addEffectFade = {$plugin.tx_sfjquery_pi1.addEffectFade}
 	addEffectFold = {$plugin.tx_sfjquery_pi1.addEffectFold}
 	addEffectHighlight = {$plugin.tx_sfjquery_pi1.addEffectHighlight}
 	addEffectPulsate = {$plugin.tx_sfjquery_pi1.addEffectPulsate}
