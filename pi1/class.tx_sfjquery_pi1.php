@@ -45,8 +45,8 @@ class tx_sfjquery_pi1 extends tslib_pibase {
 
 	var $jqueryPath     = '';
 	var $jqueryUIPath   = '';
-	var $jqueryFile     = 'jquery-1.4.4.min.js';
-	var $jqueryUIFile   = 'jquery-ui-1.8.9.custom.min.js';
+	var $jqueryFile     = 'jquery-1.6.2.min.js';
+	var $jqueryUIFile   = 'jquery-ui-1.8.16.custom.min.js';
 	var $templateHead   = '/res/pi1_template.html';
 	var $template       = '';
 	var $headerParts    = array();

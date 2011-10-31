@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'SF jQuery',
-	'description' => 'This is an interface between jQuery and TYPO3. Make use of TS and HTML for templating. You can realize accordions, tabs, sliders, prograssbars and datepicker. So programm what ever you want.',
+	'description' => 'This is an interface between jQuery and TYPO3. Make use of TS and HTML for templating. You can realize accordions, tabs, sliders, progressbars and datepicker. So programm what ever you want.',
 	'category' => 'plugin',
 	'author' => 'Stefan Froemken',
 	'author_email' => 'firma@sfroemken.de',
